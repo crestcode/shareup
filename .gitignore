@@ -17,3 +17,6 @@
 
 # Ignore Rubymine files
 /.idea
+
+# Ignore config files
+config/app_config.yml
