@@ -1,5 +1,15 @@
 Shareup::Application.routes.draw do
-  devise_for :users
+  namespace :api do
+    resources :shares
+  end
+
+  get'/dashboard'=>'welcome#dashboard'
+  root to:'welcome#index'
+
+  devise_for :users,
+             :controllers => {
+                 :omniauth_callbacks => "users/omniauth_callbacks"
+             }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
